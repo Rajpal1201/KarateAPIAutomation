@@ -27,6 +27,6 @@ Feature: Variable concepts in Karate framework
      And print "String global var in Background==>", Global_string_var
      And print "int var_int==>", var_int
      
-     
+   
 
     

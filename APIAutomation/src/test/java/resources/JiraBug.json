@@ -1,0 +1,14 @@
+ 
+ {"fields": {
+    "project": {
+        "key": "AP"
+      },
+      "summary": "Defecto Rest Api 1",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "reporter": {
+        "id": "60184c7ba7fb4000692cdbca"
+      }
+    }
+   }

@@ -4,6 +4,7 @@ Feature: To apply Background and path keyword in request.
     Given url 'https://petstore.swagger.io/v2'
     And print '==============***============='
 
+@petstore
   Scenario: To apply Background details in get request
     #Given url
     And path '/user/Rajpal12'
@@ -20,6 +21,7 @@ Feature: To apply Background and path keyword in request.
       } 
       """
 
+@petstore
   Scenario: To apply background and path in get request
     Given path '/user/Rajpal12/'
     And header Accept = 'application/xml'
@@ -34,6 +36,7 @@ Feature: To apply Background and path keyword in request.
       </apiResponse>
       """
 
+@petstore
   Scenario: To apply Match response in get request
     #Given url
     And path '/user/Rajpal12'
@@ -43,6 +46,7 @@ Feature: To apply Background and path keyword in request.
     And print response
     And match response contains deep {"message": "User not found"}
 
+@restcountries
   Scenario: To apply Match response in Countries get request
     Given url 'https://restcountries.com/v3.1'
     And path '/name/peru'
@@ -63,6 +67,7 @@ Feature: To apply Background and path keyword in request.
     And match response.[*].name.common contains 'Peru'
     And match response.[*].altSpellings[*] contains ["Republic of Peru","República del Perú"]
 
+@petstore
   Scenario: To apply match keyword for validation of xml with Query param
     Given path '/pet/findByStatus'
     And param status = 'available'
@@ -74,6 +79,7 @@ Feature: To apply Background and path keyword in request.
     And match response.pets.Pet[1].status == 'available'
     And match /pets/Pet[1]/status == 'available'
 
+@restcountries
   Scenario: To apply Fuzzy Matcher to validate response in Countries get request in json
     Given url 'https://restcountries.com/v3.1'
     And path '/name/peru'
@@ -91,6 +97,7 @@ Feature: To apply Background and path keyword in request.
     And match response.[0].name.common == '#? _.length == 4'
     And match response.[0].altSpellings == '#[] #string? _.length >=0'
 
+@petstore
   Scenario: To apply Fuzzy matcher for validation of xml with Query param
     Given path '/pet/findByStatus'
     And param status = 'available'
@@ -105,6 +112,7 @@ Feature: To apply Background and path keyword in request.
     And match response/pets/Pet[1]/id == '#? _ == 9223372000001084225'
     And match response/pets/Pet == '#[] #ignore? _.length >=2'
 
+@restcountries
   Scenario: To apply external file json validation in Countries get request in json
     Given url 'https://restcountries.com/v3.1'
     And path '/name/peru'

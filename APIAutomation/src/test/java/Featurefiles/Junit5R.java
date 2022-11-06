@@ -7,17 +7,28 @@ public class Junit5R {
 
 	
 
-	@Test
+	//@Test
 	public Karate runTest()
 	{
-		return Karate.run("first").relativeTo(getClass());
+		return Karate.run("JiraBasicAuth").relativeTo(getClass());
 	}
 	
-	@Test
+	//@Test
 	public Karate runTestusingClassPath()
 	{
 		return Karate.run("classpath:Featurefiles/first.feature");
 		
 	}
 	
+	//@Test
+	public Karate runTestJobApplication()
+	{
+		return Karate.run("JobApplication").relativeTo(getClass());
+	}
+	
+	@Test
+	public Karate runkarateConfig()
+	{
+		return Karate.run("KarateConfigJS").relativeTo(getClass());
+	}
 }

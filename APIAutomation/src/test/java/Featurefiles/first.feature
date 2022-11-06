@@ -1,3 +1,4 @@
+@ignore
 Feature: To test the service with different scenarios.
 
  #Background: Setup the url and base path
